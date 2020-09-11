@@ -90,6 +90,8 @@ class DynamicArray(object):
         self._data = np.empty((self._capacity,) + self._get_trailing_dimensions(),
                               dtype=self._dtype)
 
+        self.ndim = self._data.ndim
+
         if isinstance(array_or_shape, np.ndarray):
             self[:] = array_or_shape
 
